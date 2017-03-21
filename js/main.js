@@ -261,7 +261,6 @@ app.controller('ShoppingList_controller', ['$scope',
                         oldItem.checked = newItems[i].checked;
 
                         //updating the checkbox
-
                         if (oldItem.checked) {
                             var checkbox_label = document.getElementById('checkbox-label-' + i);
                             checkbox_label.addClass('is-checked');
