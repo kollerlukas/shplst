@@ -53,7 +53,13 @@
     //click listner for sign_in_out_btn
     document.getElementById('sign_in_out_btn')
         .addEventListener('click', function() {
-            window.open('signin.html')
+            if (currentUid != null) {
+                /*sign out*/
+                firebase.auth().signOut();
+            } else {
+                /*sign in*/
+                location.href = 'signin.html';
+            }
         });
 
     var iSendTheNewData = false;
