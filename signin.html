@@ -14,11 +14,17 @@
 
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+</head>
+<body>
 
-    <!--init firebase-->
-    <script src="init_firebase.js"></script>
+    <div id="firebaseui-auth-container"></div>
 
-    <script>
+</body>
+
+<!--init firebase-->
+<script src="init_firebase.js"></script>
+
+<script>
         var uiConfig = {
             signInSuccessUrl: 'index.html',
             signInOptions: [
@@ -33,10 +39,4 @@
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
     </script>
-</head>
-<body>
-
-    <div id="firebaseui-auth-container"></div>
-
-</body>
 </html>
