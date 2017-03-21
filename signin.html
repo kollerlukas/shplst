@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in with Google</title>
+
+    <script>
+        var uiConfig = {
+            signInSuccessUrl: 'index.html',
+            signInOptions: [
+            // Specify providers you want to offer your users.
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url can be specified and will show up in the widget.
+            tosUrl: '<your-tos-url>'
+        };
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+</head>
+<body>
+
+<div id=”firebaseui-auth-container”></div>
+
+</body>
+</html>

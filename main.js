@@ -10,61 +10,6 @@
     };
     firebase.initializeApp(config);
 
-    //init sign in dialog
-    var sign_in_dialog = document.getElementById('sign_in_dialog');
-
-    var signInButton = document.getElementById('signin_button');
-    if (!sign_in_dialog.showModal) {
-        dialogPolyfill.registerDialog(sign_in_dialog);
-    }
-
-    //on click listener for sign in button
-    signInButton.addEventListener('click', function() {
-
-        console.log("signInButton click");
-
-        if (currentUid != null) {
-            var dialog__content = sign_in_dialog.querySelector('mdl-dialog__content');
-            dialog__content.innerHTML = '<button class="mdl-button mdl-js-button signout_btn" id="signOut_btn">SignOut</button>';
-            var signOutButton = document.getElementById('signOut_btn');
-            signOutButton.addEventListener('click', function() {
-                //remove signOut button
-                document.querySelector(".signin_div").innerHTML = '';
-
-                //remove data listener
-                if (json_data_ref != null) {
-                    json_data_ref.off();
-                }
-
-                //sign out
-                firebase.auth().signOut();
-            });
-        } else {
-            // Initialize the FirebaseUI Widget using Firebase.
-            var uiConfig = {
-                signInSuccessUrl: 'index.html',
-                signInOptions: [
-                // Specify providers you want to offer your users.
-                firebase.auth.GoogleAuthProvider.PROVIDER_ID
-                ],
-                // Terms of service url can be specified and will show up in the widget.
-                tosUrl: '<your-tos-url>'
-            };
-
-            var ui = new firebaseui.auth.AuthUI(firebase.auth());
-            // The start method will wait until the DOM is loaded.
-            ui.start('#firebaseui-auth-container', uiConfig);
-        }
-
-        sign_in_dialog.showModal();
-    });
-
-
-    document.getElementById('cancel_sign_in').addEventListener('click', function() {
-        //close dialog
-        sign_in_dialog.close();
-    });
-
     // Track the UID of the current user.
     var currentUid = null;
     firebase.auth().onAuthStateChanged(function(user) {
@@ -78,12 +23,16 @@
             currentUid = user.uid;
             console.log("user signed in: " + user.displayName + ", " + user.email);
 
+            document.getElementById('sign_in_out_btn').innerHTML = 'Sign out';
+
             //listen for data
             checkIfUserExists(user.uid);
         } else {
             // Sign out operation. Reset the current user UID.
             currentUid = null;
             console.log("no user signed in");
+
+            document.getElementById('sign_in_out_btn').innerHTML = 'Sign in';
 
             /*var uiConfig = {
                 signInSuccessUrl: 'index.html',
@@ -93,14 +42,19 @@
                 ],
                 // Terms of service url can be specified and will show up in the widget.
                 tosUrl: '<your-tos-url>'
-            };*/
-            /*// Initialize the FirebaseUI Widget using Firebase.
+            };
+            // Initialize the FirebaseUI Widget using Firebase.
             var ui = new firebaseui.auth.AuthUI(firebase.auth());
             // The start method will wait until the DOM is loaded.
             ui.start('#firebaseui-auth-container', uiConfig);*/
         }
     });
 
+    //click listner for sign_in_out_btn
+    document.getElementById('sign_in_out_btn')
+        .addEventListener('click', function() {
+            window.open('signin.html')
+        });
 
     var iSendTheNewData = false;
     function writeUserData(json_data) {
@@ -307,16 +261,6 @@ app.controller('ShoppingList_controller', ['$scope',
                         //update old item
                         oldItem.value = newItems[i].value;
                         oldItem.checked = newItems[i].checked;
-
-                        //update Checkboxes
-                        /*if(document.getElementById('checkbox-label-' + index) != null) {
-                            console.log("document.getElementById('checkbox-label-' + index) != null");
-                            if (oldItem.checked) {
-                                document.getElementById('checkbox-label-' + index).MaterialCheckbox.check();
-                            } else {
-                                document.getElementById('checkbox-label-' + index).MaterialCheckbox.uncheck();
-                            }
-                        }*/
                     }
                 }
             }

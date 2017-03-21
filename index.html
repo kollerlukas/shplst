@@ -32,10 +32,6 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
 
-    <!--Roboto typeface-->
-    <!--<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">-->
-
     <!--Material Design icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--Material Design Lite min-->
@@ -63,10 +59,19 @@
             <tr>
                 <td class="mdl-data-table__cell--non-numeric list_title">Shopping List</td>
                 <td>
-                    <button class="mdl-button mdl-js-button"
+                    <button id="menu" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">more_vert</i>
+                    </button>
+
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                        for="menu">
+                        <li class="mdl-menu__item" onclick="clearItems()">Clear List</li>
+                        <li class="mdl-menu__item" id="sign_in_out_btn">SignIn</li>
+                    </ul>
+                    <!--<button class="mdl-button mdl-js-button"
                             onclick="clearItems()">
                         Clear
-                    </button>
+                    </button>-->
                 </td>
             </tr>
             </thead>
@@ -92,8 +97,8 @@
         </table>
     </div>
 
-    <a class="signin_button mdl-button mdl-js-button footer-btn footer-btn__github material-icons"
-       id="signin_button">face</a>
+    <!--<a class="signin_button mdl-button mdl-js-button footer-btn footer-btn__github material-icons"
+       id="signin_button">face</a>-->
 
     <!--Add button-->
     <button class="fab mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
@@ -122,20 +127,6 @@
             </button>
             <button type="button"
                     id="cancel"
-                    class="mdl-button">Cancel
-            </button>
-        </div>
-    </dialog>
-
-    <!--SignIn Dialog-->
-    <dialog class="mdl-dialog dialog" id="sign_in_dialog">
-        <h4 class="mdl-dialog__title">Sign in with Google</h4>
-        <div class="mdl-dialog__content">
-                <div id="firebaseui-auth-container"></div>
-        </div>
-        <div class="mdl-dialog__actions">
-            <button type="button"
-                    id="cancel_sign_in"
                     class="mdl-button">Cancel
             </button>
         </div>
