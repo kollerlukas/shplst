@@ -237,6 +237,8 @@ app.controller('ShoppingList_controller', ['$scope',
                             id: id,
                         };
 
+                        console.log("value: " + value + "; " + "checked: " + checked + "; " + "id: " + id);
+
                         newItems.push(newItem);
                     }
                 }
