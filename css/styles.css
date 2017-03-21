@@ -13,6 +13,7 @@
 
 body {
     background-color: #f5f5f5;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .list_item {
@@ -32,12 +33,7 @@ body {
 }
 
 .list_title {
-    margin-top: 32px;
-    margin-bottom: 32px;
-    padding: 32px;
-    min-height: 80px;
-    font-size: 50px;
-    font-weight: 400;
+    font-size: 36px;
 }
 
 /*list*/
