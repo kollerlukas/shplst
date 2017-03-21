@@ -259,6 +259,17 @@ app.controller('ShoppingList_controller', ['$scope',
                         //update old item
                         oldItem.value = newItems[i].value;
                         oldItem.checked = newItems[i].checked;
+
+                        //updating the checkbox
+
+                        if (oldItem.checked) {
+                            var checkbox_label = $('#checkbox-' + i).prop("checked", true).parent();
+                            checkbox_label.addClass('is-checked');
+                        } else {
+                            var checkbox_label = $('#checkbox-' + i).prop("checked", false).parent();
+                            checkbox_label.removeClass('is-checked');
+                        }
+
                     }
                 }
             }
