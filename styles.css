@@ -6,10 +6,7 @@
     width: 100%;
     margin: 0 auto;
     flex-shrink: 0;
-    padding-top: 64px;
     padding-bottom: 108px;
-    /*padding-left: 16px;
-    padding-right: 16px;*/
     position: relative;
     -webkit-overflow-scrolling: touch;
 }

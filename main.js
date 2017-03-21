@@ -1,6 +1,6 @@
 /*<Firebase Code*/
 
-    // Initialize Firebase
+    /*// Initialize Firebase
     var config = {
         apiKey: "AIzaSyCYcgykH7P7lv55TXXttWyfAFWdcEEDyFA",
         authDomain: "shopping-list-629b4.firebaseapp.com",
@@ -8,7 +8,7 @@
         storageBucket: "shopping-list-629b4.appspot.com",
         messagingSenderId: "369869077853"
     };
-    firebase.initializeApp(config);
+    firebase.initializeApp(config);*/
 
     // Track the UID of the current user.
     var currentUid = null;
