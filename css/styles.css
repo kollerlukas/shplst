@@ -15,6 +15,7 @@ html,
 body {
     background-color: #f5f5f5;
     font-family: 'Noto Sans', sans-serif;
+    font-color: #212121;
     overflow-x: hidden;
 }
 
@@ -35,7 +36,7 @@ body {
 }
 
 .header_tr {
-    height: 180px;
+    height: 108px;
 }
 
 .list_title {
@@ -59,28 +60,4 @@ body {
     margin-right: 32px;
     margin-bottom: 32px;
     z-index: 900;
-}
-
-.signin_button {
-    position: fixed;
-    display: block;
-    right: 0;
-    top: 0;
-    z-index: 900;
-
-    width: 32px;
-    height: 32px;
-    background-size: 30px 30px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    padding: 16px 0px;
-    text-decoration: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin: 0 8px;
-    cursor: pointer;
-    border-radius: 32px;
 }
