@@ -63,7 +63,8 @@
         <table class="mdl-data-table mdl-js-data-table shopping_list">
             <thead>
             <tr>
-                <td class="mdl-data-table__cell--non-numeric list_title">Shopping List</td>
+                <td class="list_title">Shopping List</td> <!--mdl-data-table__cell--non-numeric-->
+                <!--menu-->
                 <td>
                     <button id="menu" class="mdl-button mdl-js-button mdl-button--icon">
                         <i class="material-icons">more_vert</i>
@@ -74,10 +75,6 @@
                         <li class="mdl-menu__item" onclick="clearItems()">Clear List</li>
                         <li class="mdl-menu__item" id="sign_in_out_btn">SignIn</li>
                     </ul>
-                    <!--<button class="mdl-button mdl-js-button"
-                            onclick="clearItems()">
-                        Clear
-                    </button>-->
                 </td>
             </tr>
             </thead>
