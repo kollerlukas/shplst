@@ -1,0 +1,83 @@
+/*Main Layout*/
+.layout {
+    max-width: 500px;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-shrink: 0;
+    padding-top: 64px;
+    padding-bottom: 108px;
+    /*padding-left: 16px;
+    padding-right: 16px;*/
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.list_item {
+    font-size: 18px;
+    white-space: pre-line;
+    word-wrap:break-word;
+}
+
+.selected {
+    background-color: #e0e0e0;
+}
+
+.checkbox_label {
+    width: 36px;
+    height: 36px;
+    margin-top: 10px;
+}
+
+.list_title {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+/*list*/
+.shopping_list {
+    width: 100%;
+    table-layout: fixed
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/*Fab*/
+.fab.mdl-button {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    z-index: 900;
+}
+
+.signin_button {
+    position: fixed;
+    display: block;
+    right: 0;
+    top: 0;
+    z-index: 900;
+
+    width: 32px;
+    height: 32px;
+    background-size: 30px 30px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding: 16px 0px;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0 8px;
+    cursor: pointer;
+    border-radius: 32px;
+}
