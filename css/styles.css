@@ -33,6 +33,10 @@ body {
     margin-top: 10px;
 }
 
+.header_tr {
+    height: 80px;
+}
+
 .list_title {
     font-size: 36px;
 }
