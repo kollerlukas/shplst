@@ -61,31 +61,32 @@
          id="layout">
 
         <table class="mdl-data-table mdl-js-data-table shopping_list">
-            <!--<thead>-->
-            <tr>
-                <td class="list_title">Shopping List</td> <!--mdl-data-table__cell--non-numeric-->
-                <!--menu-->
-                <td>
-                    <button id="menu" class="mdl-button mdl-js-button mdl-button--icon">
-                        <i class="material-icons">more_vert</i>
-                    </button>
+            <thead>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric list_title">Shopping List</td>
 
-                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                        for="menu">
-                        <li class="mdl-menu__item" onclick="clearItems()">Clear List</li>
-                        <li class="mdl-menu__item" id="sign_in_out_btn">SignIn</li>
+                    <!--menu-->
+                    <td>
+                        <button id="menu" class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
 
-                        <script>
-                            function source_code_click() {
-                                window.open("https://github.com/kollerlukas/shplst");
-                            }
-                        </script>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="menu">
+                            <li class="mdl-menu__item" onclick="clearItems()">Clear List</li>
+                            <li class="mdl-menu__item" id="sign_in_out_btn">SignIn</li>
 
-                        <li class="mdl-menu__item" onclick="source_code_click()">Source Code</li>
-                    </ul>
-                </td>
-            </tr>
-            <!--</thead>-->
+                            <script>
+                                function source_code_click() {
+                                    window.open("https://github.com/kollerlukas/shplst");
+                                }
+                            </script>
+
+                            <li class="mdl-menu__item" onclick="source_code_click()">Source Code</li>
+                        </ul>
+                    </td>
+                </tr>
+            </thead>
 
             <tbody id="table_body">
             <tr ng-repeat="item in items" ng-class="{'selected':item.checked}">
